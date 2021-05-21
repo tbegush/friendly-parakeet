@@ -11,30 +11,37 @@ var password = [];
 // function to prompt for a password, check the input.
 function passPrompt() {
   passLength = prompt("Enter A NUMBER between 8 - 128 for password length.");
-  if (passLength === null || passLength < 8 || passLength > 128) {
+  if (passLength === null || passLength < 8 || passLength > 128) 
+  {
     alert("Seriously?!  Try one more time.  Read the directions carefully. ");
     passPrompt();
   }
-  // else  if (    incLowercase === null &&     incUppercase === null &&     incNumbers === null &&    incSpecials === null  )
-  // {
-  //   console.log("WTFBRO line 18");
-  //   alert("Well then, what would you like your password to include???");
-  //   passPrompt();
-  // }
+
 
 //ensure the input is only numeric
 
-  else if (isNaN(passLength)) {
+  if (isNaN(passLength)) {
     alert("Input MUST be a NUMBER. Try Again.");
     passPrompt();
-  } else {
+  } 
+  
+  //if the input is valid: 
+  else {
     incLowercase = confirm("Include lowercase characters?");
     incUppercase = confirm("Inclide UPPERCASE characters?");
     incNumbers = confirm("Inc1ud3 Arab1c num3ral5?");
     incSpecials = confirm("Include !@#$%^&*()_ characters?");
 
     passwordSetup();
+  }  
+  
+  if (incLowercase == false && incUppercase == false && incNumbers == false && incSpecials == false)
+  {
+    console.log("WTHBRO line 18");
+    alert("Well then, what would you like your password to include???");
+    passPrompt();
   }
+
 }
 
 var bigArray = [];
@@ -120,31 +127,32 @@ var specials = [
   "_",
 ];
 
-// else keep going
+// startbuilding the password
 function passwordSetup() {
+  //clear old data first
+
+  //concat arrays to bigArray
   bigArray = [];
   if (incLowercase == true) {
     bigArray = bigArray.concat(lowerCase);
     // console.log("lowercase" + bigArray);
   }
-  // else keep going
   if (incUppercase == true) {
     bigArray = bigArray.concat(upperCase);
     // console.log("UPPERCASE" + bigArray);
   }
-  // else keep going
   if (incNumbers == true) {
     bigArray = bigArray.concat(numbers);
     // console.log("Numbers" + bigArray);
   }
-  // else keep going
   if (incSpecials == true) {
     bigArray = bigArray.concat(specials);
     // console.log("specials" + bigArray);
   }
   password = [];
-  console.log(bigArray);
-  for (var i = 0; i < passLength; i++) {
+
+  //loop to randomly choose characters from bigArray equal to length requested by user
+    for (var i = 0; i < passLength; i++) {
     var randomChar = bigArray[Math.floor(Math.random() * bigArray.length)];
     // console.log(randomChar)
 
@@ -162,6 +170,7 @@ function writePassword() {
   // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  //concat chars without commas
   passwordText.value = password.join("");
 }
 
