@@ -1,10 +1,33 @@
 // Assignment code here
 
-var passLength = prompt("Enter between 8 - 128 for password length.");
-var incLowercase = confirm("Include lowercase characters?");
-var incUppercase = confirm("Inclide UPPERCASE characters?");
-var incNumbers = confirm("Inc1ud3 Arab1c num3ral5?");
-var incSpecials = confirm("Include !@#$%^&*()_ characters?");
+var passLength;
+var incLowercase; 
+var incUppercase;  
+var incNumbers;
+var incSpecials;
+var password = [];
+
+
+
+
+function passPrompt () { 
+  passLength = prompt("Enter A NUMBER between 8 - 128 for password length.");
+if (passLength === null || passLength < 8 || passLength > 128) {
+    alert("hey dork, you must enter a number!");
+passPrompt();
+}
+
+else {
+incLowercase = confirm("Include lowercase characters?");
+incUppercase = confirm("Inclide UPPERCASE characters?");
+incNumbers = confirm("Inc1ud3 Arab1c num3ral5?");
+incSpecials = confirm("Include !@#$%^&*()_ characters?");
+  // if All four are declined - get bent.  
+  
+passwordSetup();
+}};
+
+
 
 var bigArray = [];
 
@@ -34,7 +57,7 @@ var lowerCase = [
   "w",
   "x",
   "y",
-  "z"
+  "z",
 ];
 var upperCase = [
   "A",
@@ -62,20 +85,9 @@ var upperCase = [
   "W",
   "X",
   "Y",
-  "Z"
+  "Z",
 ];
-var numbers = [
-"1",
-"2",
-"3",
-"4",
-"5",
-"6",
-"7",
-"8",
-"9",
-"0"
-];
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var specials = [
   "!",
   "@",
@@ -97,47 +109,62 @@ var specials = [
   ">",
   "=",
   "-",
-  "_"
+  "_",
 ];
 
-if (passLength === null || passLength < 8 || passLength > 128) {
-  passLength = prompt("Enter between 8 - 128 for password length.");
-}
+
 
 // else keep going
-
+function passwordSetup () {
+  bigArray = [];
 if (incLowercase == true) {
-  bigArray = bigArray.concat(incLowercase);
+
+  bigArray = bigArray.concat(lowerCase);
+  // console.log("lowercase" + bigArray);
 }
 // else keep going
 if (incUppercase == true) {
-  bigArray = bigArray.concat(incUppercase);
+  bigArray = bigArray.concat(upperCase);
+  // console.log("UPPERCASE" + bigArray);
 }
 // else keep going
 if (incNumbers == true) {
   bigArray = bigArray.concat(numbers);
+  // console.log("Numbers" + bigArray);
 }
 // else keep going
 if (incSpecials == true) {
   bigArray = bigArray.concat(specials);
+  // console.log("specials" + bigArray);
+}
+password = [];
+console.log(bigArray)
+for (var i = 0; i < passLength; i++) {
+  var randomChar = bigArray[Math.floor(Math.random() * bigArray.length)];
+  // console.log(randomChar)
+  
+password.push(randomChar)
+
+}
 }
 
-var i;
-for (i = 0; i < passLength; i++) {
 
-  var password = bigArray[Math.floor(Math.random() * bigArray.length)];
-
-}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  passPrompt();
+
+
+
+
+
+  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = password.join("");
 }
 
 // Add event listener to generate button
