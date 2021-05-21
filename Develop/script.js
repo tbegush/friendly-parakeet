@@ -8,30 +8,30 @@ var incNumbers;
 var incSpecials;
 var password = [];
 
-
 // function to prompt for a password, check the input.
 function passPrompt() {
   passLength = prompt("Enter A NUMBER between 8 - 128 for password length.");
   if (passLength === null || passLength < 8 || passLength > 128) {
-    alert("Seriously?! Try one more time.  Read the directions carefully. ");
+    alert("Seriously?!  Try one more time.  Read the directions carefully. ");
     passPrompt();
-  } 
-  // else  if (    incLowercase === null &&     incUppercase === null &&     incNumbers === null &&    incSpecials === null  ) 
+  }
+  // else  if (    incLowercase === null &&     incUppercase === null &&     incNumbers === null &&    incSpecials === null  )
   // {
   //   console.log("WTFBRO line 18");
   //   alert("Well then, what would you like your password to include???");
   //   passPrompt();
   // }
-  else if (typeof int != true){
-alert("Input MUST be a NUMBER. Try Again.");
-  }
-  else {
+
+//ensure the input is only numeric
+
+  else if (isNaN(passLength)) {
+    alert("Input MUST be a NUMBER. Try Again.");
+    passPrompt();
+  } else {
     incLowercase = confirm("Include lowercase characters?");
     incUppercase = confirm("Inclide UPPERCASE characters?");
     incNumbers = confirm("Inc1ud3 Arab1c num3ral5?");
     incSpecials = confirm("Include !@#$%^&*()_ characters?");
-
-   
 
     passwordSetup();
   }
