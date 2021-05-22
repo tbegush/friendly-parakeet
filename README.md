@@ -4,7 +4,7 @@ Javascript, HTML, and CSS, for creating a randomized password between 8 and 128 
 
 ## ScreenShot
 
-![Password Generator](/assets/img/MarineGEO_logo.png "MarineGEO logo")
+![Password Generator](/PasswordGeneratorScreenshot.png "Password Generator")
 
 ## Installation
 
