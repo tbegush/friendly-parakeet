@@ -4,7 +4,7 @@ Javascript, HTML, and CSS, for creating a randomized password between 8 and 128 
 
 ## Installation
 
-No installation necessary.   Simply load (https://tbegush.github.io/passwordGenerator/) in your favorite web browser.
+No installation necessary.   Simply load https://tbegush.github.io/passwordGenerator/ in your favorite web browser.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
