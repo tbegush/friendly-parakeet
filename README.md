@@ -1,6 +1,10 @@
 # Password Generator
 
-Javascript, HTML, and CSS, for creating a randomized password between 8 and 128 characters.  User will be allowed to select from 4 character libraries: lowercase, UPPERCASE, numbers, and specials. 
+Javascript, HTML, and CSS, for creating a randomized password between 8 and 128 characters.  User will be allowed to select from 4 character libraries: lowercase, UPPERCASE, numbers, and specials.  Checks input for NaN characters.
+
+## ScreenShot
+
+![Password Generator](/assets/img/MarineGEO_logo.png "MarineGEO logo")
 
 ## Installation
 
