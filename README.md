@@ -8,7 +8,7 @@ No installation necessary.   Simply load https://tbegush.github.io/passwordGener
 
 ## ScreenShot
 
-![Javascript Quiz](/jsquiz.png "Javascript Quiz")
+![Password Generator](/PasswordGeneratorScreenshot.png "Password Generator")
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
